@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -31,4 +32,7 @@ Things you may want to cover:
 =======
 # typing
 タイピングスキルを競うゲーム
+>>>>>>> origin/main
+=======
+# typing
 >>>>>>> origin/main
