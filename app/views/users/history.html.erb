@@ -1,0 +1,20 @@
+<div class="container">
+
+<h2>プレイ履歴</h2>
+
+<table class="score_table"  border="2">
+    <tr class="col_name">
+      <td class="date">日付</td>
+      <td class="score">スコア</td>
+      <td class="limit">制限時間</td>
+    </tr>
+    <% @tables.each do |table| %>
+    <tr>
+        <td><%= table.created_at.strftime('%Y/%m/%d') %></td>
+        <td><%= table.score %></td>
+         <td><%= table.limit %></td>
+    </tr>
+    <%end%>
+</table>
+
+</div>

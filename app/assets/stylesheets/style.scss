@@ -1,0 +1,245 @@
+$theme-color: #FEBD00;
+$hover-color: #f79400;
+$font-color: #333;
+*{
+    color:$font-color;
+}
+header{
+   padding: 25px 60px;
+    background: $theme-color;
+    nav{
+    display: flex;
+    justify-content: space-between; 
+    width: 700px;
+    
+     a{
+        margin-top: 0;
+        text-decoration:none;
+        
+        font-size: 20px;
+        border: 2px solid $font-color;
+        padding: 3px 10px;
+        border-radius: 6px;
+         
+    }
+   
+    }
+   
+}
+h1{
+    margin-top: 60px;
+    margin-bottom: 30px;
+    font-size: 50px;
+    color:#000;
+   
+}
+h2{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.container{
+       text-align:center;
+}
+
+.flash {
+  padding: 10px 0;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+   width: 100%;
+  font-size: 20px;
+}
+
+#user_info{
+.visible{
+    position:absolute;
+    left: 110px;
+    top: 25px;
+}
+label{
+position:relative;
+}
+    .name_input,.password_input{
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .submit_btn{
+        margin-top: 30px;
+        padding: 5px 20px;
+        border-radius: 3px;
+        background: $theme-color;
+        font-size: 16px;
+         cursor: pointer;
+    }
+}
+
+#japanese{
+    font-size: 60px;
+    margin-bottom: 0;
+    color:#000;
+}
+#romaji{
+    font-size: 40px;
+    
+}
+#start_button{
+    font-size: 35px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background:$theme-color;
+   cursor:pointer;
+    text-align: center;
+    margin-top: 30px;
+    border:3px solid $font-color;
+     
+            
+}
+#count{
+    margin-top: 80px;
+    font-size: 150px;
+    display: none;
+}
+#time{
+    display: none;    
+    font-size: 30px;
+    margin-bottom: 60px;
+    height: 70px;
+}
+#displayScore{
+    font-size: 30px;
+    display: none;
+    margin: 40px auto;
+    border:3px solid $font-color;
+    border-radius: 10px;
+    background: #fff;
+    padding: 10px;
+    .label{
+    text-align: right;
+    padding-right: 10px;
+    width: 220px;
+}
+
+.scoreArea{
+    width: 220px;
+    text-align: left;
+    padding-left: 10px;
+}
+}
+
+
+
+#submitRanking{
+    display: none;
+    margin-top: 30px;
+    input{
+    padding: 10px;
+    font-size: 20px;
+}
+.submitBtn{
+    padding: 5px;
+    border-radius: 10px;
+     cursor: pointer;
+}
+}
+
+.require_login{
+    margin-top: 50px;
+    display: block;
+}
+
+#limitForm{
+    margin-top: 50px;
+  label{
+    font-size: 20px;
+}
+}
+
+
+#selectLimit{
+      font-size: 30px;
+      cursor:pointer;
+}
+
+.rankingList{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.link{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+
+.rankingTable,.score_table{
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse; 
+    border-radius: 5px;
+   
+   
+.col_name{
+    background: $theme-color;
+  .rank{
+        width: 50px;
+    }
+  .name{
+      width: 140px;
+  }
+  .score{
+       width: 120px;
+  }
+  .limit{
+       width: 100px;
+  }
+  .date{
+       width: 120px;
+  }
+}
+}
+
+
+#testForm{
+ display: flex;
+ justify-content: center;
+ 
+}
+
+.link_list{
+display: flex;
+justify-content: space-between;
+width: 800px;
+margin: 0 auto;
+    a{
+    font-size: 35px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background:$theme-color;
+    
+    text-align: center;
+    margin-top: 120px;
+    border:3px solid $font-color;
+   
+    }
+}
+
+.bestScore{
+    color:red;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.notBestScore{
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 30px;
+}

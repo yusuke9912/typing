@@ -1,0 +1,22 @@
+<div class="container">
+   
+        <h2>ユーザー情報の編集</h2>
+    <%= form_tag("/users/#{session[:user_id]}/update",id: "user_info") do%>
+    <label>ユーザー名
+    <input class="name_input"type="text" name="name">
+    </label>
+    
+     <label>パスワード
+         <input class="password_input" type="password" name="password">
+          <span class="visible"><i class="fas fa-eye"></i></span>
+     </label>
+
+     <% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+    <input class="submit_btn" type="submit" value="保存">
+    <%end%>
+    
+</div>

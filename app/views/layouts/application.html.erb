@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>タイピングゲーム</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="Description" content="タイピングの腕を競おう！">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag('favicon.ico') %>
+    <audio src="audio/incorrect.mp3" id="missaudio"></audio>
+    <audio src="audio/correct.mp3" id="correctaudio"></audio>
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-182707582-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {    
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-182707582-4');
+    </script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+        <nav>
+              <%= link_to("/") do%>
+              TOP
+             <i class="fas fa-keyboard"></i>
+              <%end%>
+            <%= link_to("/ranking_all", id: "showRanking",method: :post) do%>
+            ランキング
+            <i class="fas fa-trophy"></i>
+            <%end%>
+        <% if session[:user_id] %>
+         <%= link_to("/users/#{session[:user_id]}") do%>
+         マイページ
+         <i class="fas fa-user"></i>
+         <%end%>
+         <%= link_to("/logout") do %>
+         ログアウト
+         <i class="fas fa-sign-out-alt"></i>
+         <%end%>
+        <% else %>
+         <%= link_to("/signup") do %>
+         新規登録
+         <i class="fas fa-user-plus"></i>
+         <%end%>
+        <%= link_to("/login") do %>
+        ログイン
+        <i class="fas fa-sign-in-alt"></i>
+        <%end%>
+        <% end %>
+        
+        </nav>
+    </header>
+     <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <%= yield %>
+     
+  </body>
+</html>

@@ -1,0 +1,61 @@
+    <div class="container">
+        <% if @text == "ベストスコアを更新しました！"%>
+           <p class="bestScore"><%= @text %></p>
+           <%else%>
+           <p class="notBestScore"><%= @text %></p>
+         <%end%>  
+         <p>今回のスコア:<%= @newScore %></p>
+        <h2>ランキング(<%=@limit%>秒)</h2>
+        <p>
+          
+            <%
+            rank = 1
+            cnt = 1
+            bef_point = 0
+            @results.each do |result| 
+               
+       
+                if bef_point != result.score
+                    rank = cnt
+                end
+                if  User.find_by(id: result.users_id).name == @current_user.name && result.score == @myScore %>
+                   <%= "あなたは#{rank}位 / #{@results.length}人中です！" %>
+                   <% break
+                end
+                bef_point = result.score
+                  cnt = cnt+1
+            end
+            %>
+        </p>
+        <table class="rankingTable" border="1">
+            <tr class="col_name">
+               <td class="rank">順位</td>
+                  <td class="name">名前</td>
+            <td class="score">スコア</td>
+            </tr>
+            <%
+
+            rank = 1
+            cnt = 1
+            bef_point = 0
+            @results.each do |result| 
+                if bef_point != result.score
+                    rank = cnt
+                end
+
+                if result.users_id == session[:user_id] && result.score == @myScore %>
+                    <tr style="background:yellow">
+                    <%  else  %>
+                    <tr>
+                    <% end %>
+                    <td><%= rank %></td>
+                    <td><%=User.find_by(id: result.users_id).name %></td>
+                    <td><%= result.score %></td>
+                    </tr>
+                <%
+                bef_point = result.score
+                cnt = cnt+1
+            end  %>
+        </table>
+   
+    </div>

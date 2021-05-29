@@ -1,0 +1,93 @@
+    <div class="container">
+   
+        <h2>ランキング</h2>
+        <ul class="rankingList">
+            <li>
+                <h3>30秒</h3>
+                <table class="rankingTable" border="2">
+                    <tr class="col_name">
+                        <td class="rank">順位</td>
+                        <td class="name">名前</td>
+                        <td class="score">スコア</td>
+                    </tr>
+                   <%
+
+            rank = 1
+            cnt = 1
+            bef_point = 0
+            @results30.each do |result| 
+                if bef_point != result.score
+                    rank = cnt
+                end
+%>
+                    <tr>
+                    <td><%= rank %></td>
+                    <td><%=User.find_by(id: result.users_id).name%></td>
+                    <td><%= result.score %></td>
+                    </tr>
+                <%
+                bef_point = result.score
+                cnt = cnt+1
+            end  %>
+                </table>
+            </li>
+              <li>
+                <h3>60秒</h3>
+                <table class="rankingTable" border="2">
+                    <tr class="col_name">
+                         <td class="rank">順位</td>
+                        <td class="name">名前</td>
+                        <td class="score">スコア</td>
+                    </tr>
+                   <%
+
+            rank = 1
+            cnt = 1
+            bef_point = 0
+            @results60.each do |result| 
+                if bef_point != result.score
+                    rank = cnt
+                end
+%>
+                    <tr>
+                    <td><%= rank %></td>
+                    <td><%=User.find_by(id: result.users_id).name%></td>
+                    <td><%= result.score %></td>
+                    </tr>
+                <%
+                bef_point = result.score
+                cnt = cnt+1
+            end  %>
+                </table>
+            </li>
+              <li>
+                <h3>90秒</h3>
+                <table class="rankingTable" border="2">
+                    <tr class="col_name">
+                       <td class="rank">順位</td>
+                        <td class="name">名前</td>
+                        <td class="score">スコア</td>
+                    </tr>
+                   <%
+
+            rank = 1
+            cnt = 1
+            bef_point = 0
+            @results90.each do |result| 
+                if bef_point != result.score
+                    rank = cnt
+                end
+%>
+                    <tr>
+                    <td><%= rank %></td>
+                    <td><%=User.find_by(id: result.users_id).name%></td>
+                    <td><%= result.score %></td>
+                    </tr>
+                <%
+                bef_point = result.score
+                cnt = cnt+1
+            end  %>
+                </table>
+            </li>
+        </ul>
+    </div>
